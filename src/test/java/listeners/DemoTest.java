@@ -12,16 +12,11 @@ public class DemoTest {
 	}
 	@Test
 	public void test2() {
-//		Assert.assertTrue(false);
+		Assert.assertTrue(false);
 		System.out.println("Test 2");
 	}
-	@Test
+	@Test(dependsOnMethods= {"test2"})
 	public void test3() {
-		System.out.println("Test 3");
-		Assert.assertTrue(false);
-	}
-	@Test(dependsOnMethods= {"test3"})
-	public void test4() {
-		System.out.println("Test4");
+		System.out.println("Test3");
 	}
 }
